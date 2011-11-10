@@ -6,7 +6,7 @@ Some miscellaneous utility classes used in a number of our projects.
 License
 =======
 
-MEL Android Utils
+MEL Android Utils  
 Copyright (C) 2011 [MIT Mobile Experience Lab][mel]
 
 This library is free software; you can redistribute it and/or
