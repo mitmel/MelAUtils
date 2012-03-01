@@ -1,7 +1,7 @@
 package edu.mit.mobile.android.utils;
 /*
  * Copyright (C) 2010 MIT Mobile Experience Lab
- * 
+ *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation; either
@@ -18,31 +18,51 @@ package edu.mit.mobile.android.utils;
  */
 import java.util.Collection;
 
+import android.text.TextUtils;
+
+@Deprecated
 public class ListUtils {
-	
+
 	/**
-	 * Join. Why is Collections missing this?
-	 * 
+	 * Join.
+	 *
+	 * <p>
+	 * Android actually provides a standard join function. This now wraps it, so you should be using
+	 * that instead.
+	 * </p>
+	 *
+	 *
 	 * @param list
 	 * @param delim
 	 * @return
-	 * @see http://stackoverflow.com/questions/63150/whats-the-best-way-to-build-a-string-of-delimited-items-in-java
+	 * @see {@link TextUtils#join(CharSequence,Iterable)}
+	 * @deprecated
 	 */
+	@Deprecated
 	public static String join(Collection<String> list, String delim) {
 
-	    final StringBuilder sb = new StringBuilder();
+		return TextUtils.join(delim, list);
+	}
 
-	    String loopDelim = "";
+	/**
+	 * Join.
+	 *
+	 * <p>
+	 * Android actually provides a standard join function. This now wraps it, so you should be using
+	 * that instead.
+	 * </p>
+	 *
+	 *
+	 * @param list
+	 * @param delim
+	 * @return
+	 * @see {@link TextUtils#join(CharSequence,Iterable)}
+	 * @deprecated
+	 */
+	@Deprecated
+	public static String joinAsStrings(Collection<? extends Object> list, String delim) {
 
-	    for(final String s : list) {
-
-	        sb.append(loopDelim);
-	        sb.append(s);            
-
-	        loopDelim = delim;
-	    }
-
-	    return sb.toString();
+		return TextUtils.join(delim, list);
 	}
 
 }
